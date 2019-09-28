@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Information</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="signUp.js"></script>
+ 
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+<div>
+<table class="table">
+<tr>
+	<th>Full Name</th>
+    <th>Email</th>
+    <th>Date of Birth</th>
+    <th>Gender</th>
+    <th>Phone</th>
+    <th>Country</th>
+</tr>
+<tr ng-repeat="user in users">
+	<td>{{user.fullname}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.dob}}</td>
+    <td>{{user.gender}}</td>
+    <td>{{user.phone}}</td>
+    <td>{{user.country}}</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

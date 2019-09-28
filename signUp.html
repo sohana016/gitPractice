@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SignUp</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="signUp.js"></script>
+  
+  <style>
+
+	center{
+		background-color:transparent;
+	background-color: #9CF;
+	
+	
+	
+		}
+		form {
+  width: 580px;
+  border:2px solid black;
+  padding: 50px;
+  background-color: !important;
+  box-shadow: 10px 10px 10px 10px grey;
+}
+  </style>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<center>
+<h2 style="color:#00C">Registration Form</h2>
+<div id="bd">
+
+<form>
+  
+  <table>
+  	<tr>
+    <td><label for="fullname">FullName:</label></td>
+        <td> <input type="text"  id="fullname" class="form-control" ng-model="newUser.fullname"/></td>
+    </tr>
+    <tr>
+    <td> <label for="email">Email:</label></td>
+     <td> <input type="email"  id="email" class="form-control" ng-model="newUser.email"/></td>
+     </tr>
+     <tr>
+     	<td><label>Date Of Birth</label></td>
+        <td><input type="text" id="dob" class="form-control" ng-model="newUser.dob"/></td>
+      </tr>
+    <tr>
+      <td><label>Gender:</label></td>
+       <td><label><input type="radio" value="Male" name="gender" id="gender" ng-model="newUser.gender"/>Male</label>
+      <label><input type="radio" value="Female" name="gender" id="gender" ng-model="newUser.gender"/>Female</label></td>
+    </tr>
+    <tr>
+    	<td><label>Schedule </label></td>
+        <td><select class="form-control" id="sell" ng-model="newUser.sell">
+        <option>Morning</option>
+        <option>Evenning</option>
+        <option>Afternoon</option>
+        </select>
+        </td>
+    </tr>
+    	<tr>
+        	<td><label>Phone</td>
+            <td><input type="text" id="phone"class="form-control" ng-model="newUser.phone"/></td>
+        </tr>
+        <tr>
+        	<td><label>Country</td>
+            <td><input type="text" id="country" class="form-control" ng-model="newUser.country"/></td>
+        </tr>
+        <tr>
+        	<td><label>Password</td>
+            <td><input type="password" id="password" class="form-control" ng-model="newUser.password"/></td>
+        </tr>
+        <tr>
+        	<td><label>Confirm Password</td>
+            <td><input type="password" id="conpas" class="form-control" ng-model="newUser.conpas"/></td>
+        </tr>
+        <tr>
+    	<td><input type="checkbox"  />  I agree to the Terms us</td>
+    </tr>
+    <tr>
+    <td><button type="button" class="btn btn-info  pull-right" ng-click="saveUser()" >Submit</button></td>
+     <td><button type="submit" class="btn btn-danger">Cancel</button></td>
+    </tr>
+   	
+    </table>
+  
+</form>
+</div>
+</center>
+
+
+
+<div>
+<h2 style="text-align:center;color:#000066">User Information</h2>
+<table class="table">
+<tr bgcolor="#56DCDC">
+	<th>Full Name</th>
+    <th>Email</th>
+    <th>Date of Birth</th>
+    <th>Gender</th>
+    <th>Schedule</th>
+    <th>Phone</th>
+    <th>Country</th>
+</tr>
+<tr ng-repeat="user in users" >
+	<td class="danger">{{user.fullname}}</td>
+    <td class="info">{{user.email}}</td>
+    <td class="warning">{{user.dob}}</td>
+    <td class="active">{{user.gender}}</td>
+    <td class="success">{{user.sell}}</td>
+    <td  class="danger">{{user.phone}}</td>
+    <td class="info">{{user.country}}</td>
+</tr>
+</table>
+</div>
+
+</body>
+</html>
